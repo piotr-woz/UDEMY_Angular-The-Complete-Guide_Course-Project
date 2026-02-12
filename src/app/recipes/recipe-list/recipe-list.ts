@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, signal } from '@angular/core';
 import { RecipeItem } from './recipe-item/recipe-item';
+import { Recipe } from '../recipe.model';
 
 @Component({
   selector: 'app-recipe-list',
@@ -7,4 +8,6 @@ import { RecipeItem } from './recipe-item/recipe-item';
   templateUrl: './recipe-list.html',
   styleUrl: './recipe-list.css',
 })
-export class RecipeList {}
+export class RecipeList {
+  protected readonly recipes = signal<Recipe[]>([]);
+}
