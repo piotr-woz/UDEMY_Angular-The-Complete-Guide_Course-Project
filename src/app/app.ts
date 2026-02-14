@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { Header } from './header/header';
 import { Recipes } from './recipes/recipes';
@@ -9,5 +9,6 @@ import { ShoppingList } from './shopping-list/shopping-list';
   imports: [RouterOutlet, Header, Recipes, ShoppingList],
   templateUrl: './app.html',
   styleUrl: './app.css',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class App {}
