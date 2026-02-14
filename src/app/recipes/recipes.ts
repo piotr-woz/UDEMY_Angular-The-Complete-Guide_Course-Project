@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { RecipeList } from './recipe-list/recipe-list';
 import { RecipeDetail } from './recipe-detail/recipe-detail';
 
@@ -7,5 +7,6 @@ import { RecipeDetail } from './recipe-detail/recipe-detail';
   imports: [RecipeList, RecipeDetail],
   templateUrl: './recipes.html',
   styleUrl: './recipes.css',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class Recipes {}
