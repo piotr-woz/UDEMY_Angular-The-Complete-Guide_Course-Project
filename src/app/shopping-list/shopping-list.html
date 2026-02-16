@@ -3,7 +3,11 @@
     <app-shopping-edit />
     <hr>
     <div class="list-group">
-      <a href="#" class="list-group-item list-group-item-action">An item</a>
+      @for (ingredient of ingredients(); track $index) {
+      <a href="#" class="list-group-item list-group-item-action">
+        {{ingredient.name}} ({{ingredient.amount}})
+      </a>
+      }
     </div>
   </div>
 </div>
