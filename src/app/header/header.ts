@@ -1,4 +1,4 @@
-import { Component, ChangeDetectionStrategy } from '@angular/core';
+import { Component, ChangeDetectionStrategy, output } from '@angular/core';
 
 @Component({
   selector: 'app-header',
@@ -6,4 +6,10 @@ import { Component, ChangeDetectionStrategy } from '@angular/core';
   styleUrl: './header.css',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class Header {}
+export class Header {
+  public readonly featureSelected = output<string>();
+
+  protected onSelectFeature(event: Event): void {
+    this.featureSelected.emit((<HTMLAnchorElement>event.target).textContent);
+  }
+}

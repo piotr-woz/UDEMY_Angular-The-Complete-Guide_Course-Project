@@ -1,10 +1,16 @@
-<app-header />
+<app-header (featureSelected)="onSelectFeature($event)" />
 
 <div class="container">
   <div class="row">
     <div class="col-md-12">
+      @switch(featureName()) {
+      @case('Recipes') {
       <app-recipes />
+      }
+      @case('Shopping List') {
       <app-shopping-list />
+      }
+      }
     </div>
   </div>
 </div>
