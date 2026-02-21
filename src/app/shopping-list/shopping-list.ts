@@ -10,7 +10,7 @@ import { Ingredient } from '../shared/ingredient.model';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ShoppingList {
-  ingredients = signal<Ingredient[]>([
+  protected readonly ingredients = signal<Ingredient[]>([
     { name: 'Apples', amount: 5 },
     { name: 'Tomatoes', amount: 10 },
   ]);
