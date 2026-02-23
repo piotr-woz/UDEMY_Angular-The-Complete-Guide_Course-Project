@@ -1,4 +1,5 @@
-import { Component, ChangeDetectionStrategy } from '@angular/core';
+import { Component, ChangeDetectionStrategy, input } from '@angular/core';
+import { Recipe } from '../recipe.model';
 
 @Component({
   selector: 'app-recipe-detail',
@@ -6,4 +7,6 @@ import { Component, ChangeDetectionStrategy } from '@angular/core';
   styleUrl: './recipe-detail.css',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class RecipeDetail {}
+export class RecipeDetail {
+  public readonly recipe = input.required<Recipe | undefined>();
+}

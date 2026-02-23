@@ -1,8 +1,12 @@
 <div class="row">
   <div class="col-md-5">
-    <app-recipe-list />
+    <app-recipe-list (recipeWasSelected)="onRecipeWasSelected($event)" />
   </div>
   <div class="col-md-7">
-    <app-recipe-detail />
+    @if (selectedRecipe()) {
+    <app-recipe-detail [recipe]="selectedRecipe()" />
+    } @else {
+    <p class="mt-3">Please select a Recipe!</p>
+    }
   </div>
 </div>

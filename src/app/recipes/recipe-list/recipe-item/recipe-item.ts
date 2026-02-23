@@ -1,4 +1,4 @@
-import { Component, ChangeDetectionStrategy, input } from '@angular/core';
+import { Component, ChangeDetectionStrategy, input, output } from '@angular/core';
 import { Recipe } from '../../recipe.model';
 
 @Component({
@@ -8,10 +8,14 @@ import { Recipe } from '../../recipe.model';
   changeDetection: ChangeDetectionStrategy.OnPush,
   host: {
     class: 'd-flex justify-content-between align-items-center',
+    '(click)': 'onSelectedRecipe()',
   },
 })
 export class RecipeItem {
   public readonly recipe = input.required<Recipe>();
-}
+  public readonly recipeSelected = output<void>();
 
-// click: 'onSelectedRecipe()',
+  protected onSelectedRecipe() {
+    this.recipeSelected.emit();
+  }
+}
