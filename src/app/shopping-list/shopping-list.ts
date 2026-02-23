@@ -14,4 +14,8 @@ export class ShoppingList {
     { name: 'Apples', amount: 5 },
     { name: 'Tomatoes', amount: 10 },
   ]);
+
+  protected onAddIngredient(ingredient: Ingredient): void {
+    this.ingredients.update((ingredients) => [...ingredients, ingredient]);
+  }
 }
