@@ -9,8 +9,9 @@
 
     <div class="collapse navbar-collapse" id="mainNavbar">
       <ul class="navbar-nav ms-auto">
-        <li class="nav-item"><a class="nav-link" href="#" (click)="onSelectFeature($event)">Recipes</a></li>
-        <li class="nav-item"><a class="nav-link" href="#" (click)="onSelectFeature($event)">Shopping List</a></li>
+        <li class="nav-item"><a class="nav-link" href="#" (click)="onSelectFeature('recipes')">Recipes</a></li>
+        <li class="nav-item"><a class="nav-link" href="#" (click)="onSelectFeature('shopping-list')">Shopping List</a>
+        </li>
       </ul>
 
       <ul class="navbar-nav">
@@ -27,3 +28,5 @@
     </div>
   </div>
 </nav>
+
+<!-- md: ≥768px -->

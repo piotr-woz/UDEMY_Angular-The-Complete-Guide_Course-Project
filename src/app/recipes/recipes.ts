@@ -12,8 +12,4 @@ import { Recipe } from './recipe.model';
 })
 export class Recipes {
   protected readonly selectedRecipe = signal<Recipe | undefined>(undefined);
-
-  protected onRecipeWasSelected(recipe: Recipe) {
-    this.selectedRecipe.set(recipe);
-  }
 }

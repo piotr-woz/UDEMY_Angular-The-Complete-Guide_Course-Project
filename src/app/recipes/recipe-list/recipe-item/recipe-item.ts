@@ -8,14 +8,14 @@ import { Recipe } from '../../recipe.model';
   changeDetection: ChangeDetectionStrategy.OnPush,
   host: {
     class: 'd-flex justify-content-between align-items-center',
-    '(click)': 'onSelectedRecipe()',
+    '(click)': 'onRecipeSelected()',
   },
 })
 export class RecipeItem {
   public readonly recipe = input.required<Recipe>();
   public readonly recipeSelected = output<void>();
 
-  protected onSelectedRecipe() {
+  protected onRecipeSelected() {
     this.recipeSelected.emit();
   }
 }

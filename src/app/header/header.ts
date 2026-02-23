@@ -1,15 +1,16 @@
 import { Component, ChangeDetectionStrategy, output } from '@angular/core';
 
+type Feature = 'recipes' | 'shopping-list';
+
 @Component({
   selector: 'app-header',
   templateUrl: './header.html',
-  styleUrl: './header.css',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class Header {
-  public readonly featureSelected = output<string>();
+  public readonly featureSelected = output<Feature>();
 
-  protected onSelectFeature(event: Event): void {
-    this.featureSelected.emit((<HTMLAnchorElement>event.target).textContent);
+  protected onSelectFeature(feature: Feature): void {
+    this.featureSelected.emit(feature);
   }
 }
