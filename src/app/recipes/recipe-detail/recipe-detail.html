@@ -12,9 +12,11 @@
 
 <div class="row my-3">
   <div class="col-12">
-    <div class="btn-group dropdown">
-      <button class="btn btn-primary dropdown-toggle" type="button" data-bs-toggle="dropdown">Manage Recipe</button>
-      <ul class="dropdown-menu">
+    <div class="btn-group" appDropdown #r="appDropdown">
+      <button id="recipe-dropdown-btn" class="btn btn-primary dropdown-toggle" type="button"
+        [attr.aria-expanded]="r.isOpen()" [attr.aria-haspopup]="true">Manage
+        Recipe</button>
+      <ul class="dropdown-menu" [class.show]="r.isOpen()" aria-labelledby="recipe-dropdown-btn">
         <li><a class="dropdown-item" href="#">To Shopping List</a></li>
         <li><a class="dropdown-item" href="#">Edit Recipe</a></li>
         <li><a class="dropdown-item" href="#">Delete Recipe</a></li>
