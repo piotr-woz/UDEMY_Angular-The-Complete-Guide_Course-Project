@@ -1,7 +1,7 @@
 import { Component, ChangeDetectionStrategy, signal } from '@angular/core';
 import { RecipeList } from './recipe-list/recipe-list';
 import { RecipeDetail } from './recipe-detail/recipe-detail';
-import { Recipe } from './recipe.model';
+import { Recipe } from '../shared/recipe.model';
 
 @Component({
   selector: 'app-recipes',
