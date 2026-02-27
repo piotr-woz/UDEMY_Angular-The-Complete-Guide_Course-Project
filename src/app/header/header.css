@@ -1,0 +1,19 @@
+.nav-dropdown {
+  position: relative;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 0;
+  right: 0;
+  transform: translate(0px, 40px);
+}
+
+@media (max-width: 767px) {
+  .dropdown-menu {
+    top: 100%;
+    right: auto;
+    left: 0;
+    transform: translate(0, 0);
+  }
+}
